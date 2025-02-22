@@ -131,6 +131,35 @@ files = [
 ]
 
 [[package]]
+name = "packaging"
+version = "24.2"
+description = "Core utilities for Python packages"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "packaging-24.2-py3-none-any.whl", hash = "sha256:09abb1bccd265c01f4a3aa3f7a7db064b36514d2cba19a2f694fe6150451a759"},
+    {file = "packaging-24.2.tar.gz", hash = "sha256:c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"},
+]
+
+[[package]]
+name = "plotly"
+version = "6.0.0"
+description = "An open-source, interactive data visualization library for Python"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "plotly-6.0.0-py3-none-any.whl", hash = "sha256:f708871c3a9349a68791ff943a5781b1ec04de7769ea69068adcd9202e57653a"},
+    {file = "plotly-6.0.0.tar.gz", hash = "sha256:c4aad38b8c3d65e4a5e7dd308b084143b9025c2cc9d5317fc1f1d30958db87d3"},
+]
+
+[package.dependencies]
+narwhals = ">=1.15.1"
+packaging = "*"
+
+[package.extras]
+express = ["numpy"]
+
+[[package]]
 name = "polars"
 version = "1.22.0"
 description = "Blazingly fast DataFrame library"
@@ -175,4 +204,4 @@ xlsxwriter = ["xlsxwriter"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "717dd373bbfb220ee3a00a80c97166e50e436dd2a7bd3121491af6dc236cd5b2"
+content-hash = "0412f4d69699713296d82b289cc338091be899f9b21415ac92b90166cbc01adc"

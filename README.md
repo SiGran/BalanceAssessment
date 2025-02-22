@@ -86,16 +86,13 @@ Performance metrics include:
 
 ## Model evaluation
 
-Using the computed Euclidean distances computed from the ML (y) and AP (x) axis, the
-model has reasonable accuracy in most cases (from 50% to 80%, most often >70%). 
-With similar performance coming from the F1 score. 
+Using the Euclidean distances computed from the ML (y) and AP (x) axis, the
+model has reasonable accuracy in most cases (from 50% to 80%, most often >70%).
 
-Judging from the Box and Whisker plots this seems like a reasonable result. From the plots you clearly see the Path length increasing with age.
-There is still, however, quite a lot of overlap: at every age you have people who perform quite well on
-the firm surface. Only on the foam surface are the best performers in the older age brackets not as good 
-as the younger age bracket.
-
-Therefore it is not surprising that the results (both accuracy and F1 score). 
+Judging from the Box and Whisker plots this seems like a reasonable result: from the plots you clearly see the path 
+length is increasing with age. At every age, however, you have people who perform quite well on
+the firm surface. This makes it hard for the SVM to achieve very high accuracy and F1 scores.
+The Best T scores likely have less of this overlap for the best performers and therefore improve the accuracy and F1 scores.
 
 ## Acknowledgments
 

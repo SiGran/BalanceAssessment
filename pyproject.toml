@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "balance assessment"
+version = "0.1.0"
+description = ""
+authors = ["SiGran <simongrannetia@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+narwhals = "^1.27.1"
+polars = "^1.22.0"
+h5py = "^3.13.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

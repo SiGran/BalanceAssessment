@@ -68,6 +68,26 @@ class BDSConverterH5:
             dataset.attrs[key] = str(value)
         return
 
+    # Add this method to the BDSConverterH5 class
+    def _calculate_cop_distance(self, df: pl.DataFrame) -> pl.Series:
+        """Calculate the COP distance for each row in the DataFrame
+
+        Parameters
+        ----------
+        df : pl.DataFrame
+            DataFrame containing COPx[cm] and COPy[cm] columns
+
+        Returns
+        -------
+        pl.Series
+            Series containing the COP distance for each row
+        """
+        dx = df["COPx[cm]"].diff().fill_null(0)
+        dy = df["COPy[cm]"].diff().fill_null(0)
+        distances = (dx ** 2 + dy ** 2).sqrt()
+        return distances
+
+    # Modify the _process_subject method in the BDSConverterH5 class
     def _process_subject(
             self,
             subject_id: str,
@@ -120,6 +140,10 @@ class BDSConverterH5:
                 separator="\t",
                 has_header=True
             )
+
+            # Calculate COP distance
+            cop_distance = self._calculate_cop_distance(df)
+            df = df.with_columns(cop_distance.alias("COP_distance[cm]"))
 
             # Create dataset with column information
             ds = data_grp.create_dataset(

@@ -11,6 +11,7 @@ narwhals = "^1.27.1"
 polars = "^1.22.0"
 h5py = "^3.13.0"
 plotly = "^6.0.0"
+streamlit = "^1.42.2"
 
 
 [build-system]

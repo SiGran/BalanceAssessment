@@ -50,7 +50,7 @@ pip install -r requirements.txt
 │   └── BDS/              # Raw balance data files
 ├── src/
 │   ├── analyzing/        # Analysis modules
-│   ├── processing/       # Data processing
+s│   ├── processing/       # Data processing
 │   └── visualizing/      # Visualization components
 ├── poetry.lock          # Poetry dependency lock
 ├── pyproject.toml       # Project configuration

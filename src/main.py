@@ -29,22 +29,34 @@ from processing.bds_convert_hf5 import BDSConverterH5
 from analyzing.bds_analyzer import BDSAnalyzer
 from analyzing.age_group_predictor import AgeGroupPredictor
 
+
 def main():
     # Set up paths
-    bds_dir = Path.cwd().parent / "data" / "BDS"
-    h5_path = Path.cwd().parent / "data" / "BDS.h5"
-    vis_app = Path.cwd() / "visualizing" / "app.py"
+    bds_dir = Path.cwd() / "data" / "BDS"
+    h5_path = Path.cwd() / "data" / "BDS.h5"
+    vis_app = Path.cwd() / "src" / "visualizing" / "app.py"
 
-    # Check if data directory exists
+    # Check if data directory exists, try alternate paths
     if not bds_dir.exists():
-        print(f"Error: Data directory not found at {bds_dir}")
-        print("Please check the README for setup instructions.")
-        sys.exit(1)
+        alternate_bds_dir = Path.cwd().parent / "data" / "BDS"
+        if alternate_bds_dir.exists():
+            bds_dir = alternate_bds_dir
+            h5_path = Path.cwd().parent / "data" / "BDS.h5"
+        else:
+            print(f"Error: Data directory not found at {bds_dir}")
+            print(f"Also tried: {alternate_bds_dir}")
+            print("Please check the README for setup instructions.")
+            sys.exit(1)
 
     if not vis_app.exists():
-        print(f"Error: Visualization app not found at {vis_app}")
-        print(f"Expected path: {vis_app.absolute()}")
-        sys.exit(1)
+        alternate_vis_app = Path.cwd() / "visualizing" / "app.py"
+        if alternate_vis_app.exists():
+            vis_app = alternate_vis_app
+        else:
+            print(f"Error: Visualization app not found at {vis_app}")
+            print(f"Also tried: {alternate_vis_app}")
+            print(f"Expected path: {vis_app.absolute()}")
+            sys.exit(1)
 
     try:
         # Create H5 file if needed

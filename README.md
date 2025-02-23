@@ -59,10 +59,19 @@ pip install -r requirements.txt
 
 ## Usage
 
-1. Run the main application:
+There are two ways to run the application:
+
+### Using PyCharm (Recommended)
+1. Open the project in PyCharm
+2. PyCharm will detect the `pyproject.toml` and set up the Poetry environment automatically
+3. Run main.py from pycharm.
+
+### Using Command Line
+1. From the project root directory:
 ```bash
+poetry install
 poetry run python src/main.py
-```
+````
 
 2. The application will:
    - Convert raw data to HDF5 format (if needed)

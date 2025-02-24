@@ -1,9 +1,5 @@
-[
-server
-]
+[server]
 headless = true
 
-[
-browser
-]
+[browser]
 serverAddress = "0.0.0.0"

@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "balance assessment"
+name = "balance-assessment"
 version = "0.1.0"
 description = ""
 authors = ["SiGran <simongrannetia@gmail.com>"]

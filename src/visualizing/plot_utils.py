@@ -1,7 +1,7 @@
 """Utility module for generating plots in the BDS analysis application.
 
 This module provides plotting functionality for visualizing:
-- Age-binned balance measurements
+- Age-binned src measurements
 - Trial condition comparisons
 - Age group prediction results
 - Confusion matrices and decision boundaries

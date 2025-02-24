@@ -8,16 +8,16 @@ from pathlib import Path
 
 
 class AgeGroupPredictor:
-    """Predict age groups using balance data and best T scores.
+    """Predict age groups using src data and best T scores.
 
     This class implements a binary classifier using Support Vector Machine (SVM)
-    to predict whether a subject is Young or Old based on their balance data
+    to predict whether a subject is Young or Old based on their src data
     (COP distance) and Best T scores.
 
     Attributes
     ----------
     h5_path : Path
-        Path to the HDF5 file containing the balance data
+        Path to the HDF5 file containing the src data
     exclude_incomplete : bool
         Whether to exclude subjects with incomplete data
     incomplete_subjects : set[int]
@@ -31,7 +31,7 @@ class AgeGroupPredictor:
         Parameters
         ----------
         h5_path : Path
-            Path to the HDF5 file containing the balance data
+            Path to the HDF5 file containing the src data
         exclude_incomplete : bool, optional
             Whether to exclude subjects with incomplete data, by default True
         """

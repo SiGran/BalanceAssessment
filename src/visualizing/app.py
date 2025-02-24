@@ -1,8 +1,8 @@
 """Streamlit application for Balance Data Set (BDS) analysis and visualization.
 
 This module provides an interactive web interface for analyzing and visualizing
-balance data from the BDS dataset. It includes functionality for:
-- Loading and processing balance measurement data
+src data from the BDS dataset. It includes functionality for:
+- Loading and processing src measurement data
 - Creating age-binned visualizations
 - Displaying trial statistics
 - Showing age group prediction results
@@ -35,9 +35,9 @@ import polars as pl
 from pathlib import Path
 from plotly.graph_objects import Figure
 
-from src.analyzing.bds_analyzer import BDSAnalyzer
-from src.analyzing.age_group_predictor import AgeGroupPredictor
-from src.visualizing.plot_utils import PlotGenerator
+from src.analyzing import BDSAnalyzer
+from src.analyzing import AgeGroupPredictor
+from src.visualizing import PlotGenerator
 
 @st.cache_data
 def load_and_process_data(h5_path: Path) -> dict[int, pl.DataFrame]:
@@ -163,7 +163,7 @@ def run_vis_app(h5_path: Path) -> None:
     """
     st.title("Balance Data Analysis")
     st.markdown("""
-        This application analyzes balance data from the BDS dataset.
+        This application analyzes src data from the BDS dataset.
         Use the controls in the sidebar to adjust the visualization.
     """)
 

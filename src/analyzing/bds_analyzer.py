@@ -2,7 +2,7 @@
 
 This module provides functionality for analyzing Balance Data Set (BDS) data
 stored in HDF5 format. It includes methods for data validation, path length
-calculations, and age-based grouping of balance measurements.
+calculations, and age-based grouping of src measurements.
 
 The module assumes the following HDF5 structure:
 /subjects/
@@ -20,7 +20,7 @@ import h5py
 import polars as pl
 from pathlib import Path
 
-from src.CONSTANTS import DT
+from src import DT
 
 
 class BDSAnalyzer:
@@ -28,7 +28,7 @@ class BDSAnalyzer:
 
     This class provides methods for validating the data structure,
     calculating Center of Pressure (COP) path lengths, and analyzing
-    balance measurements across different age groups.
+    src measurements across different age groups.
 
     Parameters
     ----------
@@ -80,7 +80,7 @@ class BDSAnalyzer:
         - Number of trials per participant
         - Total number of trials
         - Distribution of trial conditions
-        - Age group balance
+        - Age group src
         - Missing data by subject
 
         Returns
@@ -110,7 +110,7 @@ class BDSAnalyzer:
             "total_trials": len(self.h5_file["trials"])
         }
 
-        # Age group balance check
+        # Age group src check
         age_groups = {"Young": 0, "Old": 0}
         incomplete_age_groups = {"Young": 0, "Old": 0}
         incomplete_subjects = {59, 60, 86, 122, 134}

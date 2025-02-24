@@ -35,9 +35,9 @@ import polars as pl
 from pathlib import Path
 from plotly.graph_objects import Figure
 
-from ..analyzing import BDSAnalyzer
-from ..analyzing import AgeGroupPredictor
-from ..visualizing import PlotGenerator
+from src.analyzing.bds_analyzer import BDSAnalyzer
+from src.analyzing.age_group_predictor import AgeGroupPredictor
+from src.visualizing import PlotGenerator
 
 @st.cache_data
 def load_and_process_data(h5_path: Path) -> dict[int, pl.DataFrame]:

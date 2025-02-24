@@ -20,7 +20,7 @@ import h5py
 import polars as pl
 from pathlib import Path
 
-from src.CONSTANTS import DT
+from ..CONSTANTS import DT
 
 
 class BDSAnalyzer:
